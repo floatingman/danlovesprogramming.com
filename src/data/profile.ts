@@ -27,7 +27,7 @@ export const profile: Profile = {
   name: 'Daniel Newman',
   headline: 'I make stuff, sometimes with a computer',
   location: 'Nashville, TN',
-  summary: '', // empty = auto-hidden; add a 2-3 sentence bio here when ready
+  summary: 'I help enterprise engineering teams remove CI/CD as the bottleneck and ship faster, more reliably. 10+ years building automation and test infrastructure at SUSE, Equinox Media, and XOi Technologies: air-gapped CI/CD on AWS, 100+ Jenkins pipelines, and Kubernetes/Rancher test automation. From Jenkins cleanup to multi-cloud pipelines across AWS, GCP, and Azure.',
   linkedinUrl: 'https://www.linkedin.com/in/danielnewman/',
   githubUsername: 'floatingman',
   skills: [
