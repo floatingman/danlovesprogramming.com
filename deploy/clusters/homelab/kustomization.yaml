@@ -5,4 +5,4 @@ resources:
   - ./flux-system
 images:
   - name: ghcr.io/floatingman/danlovesprogramming.com
-    newTag: sha-7f1b6a2fa0bb851c99bfb6a026780af9d9f90857
+    newTag: sha-8d4fde0130c5b83449763cf1d20642a3372de002
