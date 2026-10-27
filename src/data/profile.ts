@@ -46,11 +46,18 @@ export const profile: Profile = {
   ],
   experience: [
     {
-      company: 'Big Hearted Labs', // verified from GitHub profile
-      role: 'Software Engineer', // neutral placeholder — refine from LinkedIn
-      start: '2016', // unverified — confirm with user before ship
+      company: 'SUSE',
+      role: 'Software Engineer', // unverified — confirm role title
+      start: '2025', // unverified — confirm start year
       end: null,
-      summary: 'Building software for Big Hearted Labs.',
+      summary: '',
+    },
+    {
+      company: 'Big Hearted Labs',
+      role: 'Software Engineer', // unverified — confirm role title
+      start: '2016', // unverified — confirm start year
+      end: '2025', // unverified — confirm end year
+      summary: 'My software consultancy.',
     },
   ],
   featuredRepos: [],

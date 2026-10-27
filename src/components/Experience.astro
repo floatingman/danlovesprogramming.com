@@ -9,7 +9,7 @@ import { profile } from '../data/profile';
       <li>
         <h3>{entry.role} · {entry.company}</h3>
         <p class="muted">{entry.start} – {entry.end ?? 'Present'}</p>
-        <p>{entry.summary}</p>
+        {entry.summary && <p>{entry.summary}</p>}
       </li>
     ))}
   </ol>
