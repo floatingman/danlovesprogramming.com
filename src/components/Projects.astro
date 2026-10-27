@@ -18,6 +18,9 @@ const { repos } = Astro.props;
           <h3><a href={repo.html_url}>{repo.name}</a></h3>
           {repo.description && <p>{repo.description}</p>}
           <p class="muted">{[repo.language, `★ ${repo.stargazers_count}`].filter(Boolean).join(' · ')}</p>
+          {repo.topics.length > 0 && (
+            <p class="muted">{repo.topics.slice(0, 3).map((t) => `#${t}`).join(' ')}</p>
+          )}
         </article>
       ))}
     </div>

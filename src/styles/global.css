@@ -2,7 +2,9 @@
   --bg: #ffffff;
   --fg: #1a1a1a;
   --muted: #555555;
-  --accent: #2563eb;
+  --accent: #4f46e5;
+  --accent-strong: #4338ca;
+  --accent-tint: rgba(79, 70, 229, 0.08);
   --card: #f6f6f6;
   --border: #e2e2e2;
 }
@@ -11,7 +13,9 @@
     --bg: #0f1115;
     --fg: #e6e6e6;
     --muted: #9aa0a6;
-    --accent: #7aa2ff;
+    --accent: #a5b4fc;
+    --accent-strong: #818cf8;
+    --accent-tint: rgba(165, 180, 252, 0.10);
     --card: #1a1d24;
     --border: #2a2e37;
   }
@@ -39,6 +43,18 @@ header nav a:first-child {
 }
 h2 {
   margin-top: 2.5rem;
+  position: relative;
+  padding-bottom: 0.35rem;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 2.5rem;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--accent);
 }
 .hero {
   display: flex;
@@ -119,4 +135,44 @@ img.avatar {
   width: 128px;
   height: 128px;
   border-radius: 50%;
+}
+.card {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px var(--accent-tint), 0 0 0 1px var(--accent-tint);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover {
+    transition: none;
+    transform: none;
+  }
+}
+.button {
+  transition: background 160ms ease, color 160ms ease;
+}
+.button:hover {
+  background: var(--accent-tint);
+}
+.actions .button:first-child {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent-strong);
+}
+@media (prefers-color-scheme: dark) {
+  .actions .button:first-child {
+    background: var(--accent-strong);
+    color: #0b0d16;
+  }
+}
+header nav a {
+  text-decoration: none;
+}
+header nav a:hover {
+  color: var(--accent-strong);
+}
+.skills-list li {
+  background: var(--accent-tint);
 }

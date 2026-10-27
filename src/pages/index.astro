@@ -7,7 +7,12 @@ import Skills from '../components/Skills.astro';
 import { profile } from '../data/profile';
 import { getTopRepos } from '../lib/github';
 
-const repos = await getTopRepos(profile.githubUsername);
+const repos = await getTopRepos(
+  profile.githubUsername,
+  6,
+  profile.featuredRepos,
+  profile.excludeRepos,
+);
 ---
 
 <Base title={`${profile.name} — ${profile.headline}`}>

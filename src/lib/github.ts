@@ -9,7 +9,12 @@ export interface Repo {
   archived: boolean;
 }
 
-export async function getTopRepos(username: string, count = 6): Promise<Repo[]> {
+export async function getTopRepos(
+  username: string,
+  count = 6,
+  featured: string[] = [],
+  exclude: string[] = [],
+): Promise<Repo[]> {
   const headers: Record<string, string> = {
     Accept: 'application/vnd.github+json',
     'User-Agent': 'danlovesprogramming.com-build',
@@ -23,10 +28,26 @@ export async function getTopRepos(username: string, count = 6): Promise<Repo[]> 
     );
     if (!res.ok) throw new Error(`GitHub API responded ${res.status}`);
     const repos = (await res.json()) as Repo[];
-    return repos
-      .filter((r) => !r.fork && !r.archived)
-      .sort((a, b) => b.stargazers_count - a.stargazers_count)
-      .slice(0, count);
+    const owned = repos.filter(
+      (r) => !r.fork && !r.archived && !exclude.includes(r.name.toLowerCase()),
+    );
+    if (featured.length > 0) {
+      const wanted = new Set(featured.map((n) => n.toLowerCase()));
+      const picked = new Set<string>();
+      const featuredPicks = owned.filter((r) => {
+        const name = r.name.toLowerCase();
+        if (wanted.has(name) && !picked.has(name)) {
+          picked.add(name);
+          return true;
+        }
+        return false;
+      });
+      const rest = owned
+        .filter((r) => !picked.has(r.name.toLowerCase()))
+        .sort((a, b) => b.stargazers_count - a.stargazers_count);
+      return [...featuredPicks, ...rest].slice(0, count);
+    }
+    return owned.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, count);
   } catch (err) {
     console.warn(`[github] repo fetch failed; Projects section renders fallback. ${err}`);
     return [];
