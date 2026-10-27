@@ -52,13 +52,6 @@ export const profile: Profile = {
       end: null,
       summary: '',
     },
-    {
-      company: 'Big Hearted Labs',
-      role: 'Software Engineer', // unverified — confirm role title
-      start: '2016', // unverified — confirm start year
-      end: null, // ongoing alongside SUSE per user ("is my software consultancy")
-      summary: 'My software consultancy.',
-    },
   ],
   featuredRepos: [],
   excludeRepos: [],
