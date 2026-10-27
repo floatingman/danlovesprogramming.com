@@ -113,8 +113,15 @@ h2::after {
   list-style: none;
   padding: 0;
 }
-.experience-list li + li {
+.experience-list > li + li {
   margin-top: 1.5rem;
+}
+.experience-list ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.25rem;
+}
+.experience-list ul li {
+  margin-top: 0.25rem;
 }
 .experience-list h3 {
   margin: 0 0 0.15rem;

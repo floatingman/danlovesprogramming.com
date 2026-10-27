@@ -4,6 +4,7 @@ export interface ExperienceEntry {
   start: string; // e.g. "2022"
   end: string | null; // null = present
   summary: string;
+  highlights?: string[]; // optional bullet points, rendered as a list
 }
 
 export interface Profile {
@@ -46,11 +47,16 @@ export const profile: Profile = {
   ],
   experience: [
     {
-      company: 'SUSE',
-      role: 'Software Engineer', // unverified — confirm role title
-      start: '2025', // unverified — confirm start year
+      company: 'SUSE', // full-time, remote — from LinkedIn
+      role: 'Software Engineer', // unverified — LinkedIn entry omits exact title; confirm
+      start: 'Jan 2022',
       end: null,
-      summary: '',
+      summary: 'Advancing software quality assurance through innovative CI/CD solutions and automation.',
+      highlights: [
+        'Developed air-gapped CI/CD infrastructure for Rancher Manager and RKE2 on AWS, facilitating seamless deployments.',
+        'Authored 100+ Jenkins pipelines, standardizing processes and enhancing efficiency across staging and release branches.',
+        'Improved release reliability by extending Kubernetes e2e validation across multiple Rancher repositories, addressing flaky tests.',
+      ],
     },
   ],
   featuredRepos: [],

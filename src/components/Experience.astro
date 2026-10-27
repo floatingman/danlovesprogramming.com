@@ -10,6 +10,13 @@ import { profile } from '../data/profile';
         <h3>{entry.role} · {entry.company}</h3>
         <p class="muted">{entry.start} – {entry.end ?? 'Present'}</p>
         {entry.summary && <p>{entry.summary}</p>}
+        {entry.highlights && entry.highlights.length > 0 && (
+          <ul>
+            {entry.highlights.map((h) => (
+              <li>{h}</li>
+            ))}
+          </ul>
+        )}
       </li>
     ))}
   </ol>
