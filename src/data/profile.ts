@@ -20,7 +20,7 @@ export interface Profile {
 // SYNC WITH LINKEDIN: edit this object when your LinkedIn profile changes.
 export const profile: Profile = {
   name: 'Daniel Newman',
-  headline: 'I make stuff, sometimes with a computer',
+  headline: 'GitOps loop verified: push, CI, cluster, live',
   location: 'Nashville, TN',
   summary: '', // TODO(user): 2-3 sentence bio from LinkedIn
   linkedinUrl: '', // TODO(user): LinkedIn vanity URL
