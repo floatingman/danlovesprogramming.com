@@ -1,0 +1,122 @@
+:root {
+  --bg: #ffffff;
+  --fg: #1a1a1a;
+  --muted: #555555;
+  --accent: #2563eb;
+  --card: #f6f6f6;
+  --border: #e2e2e2;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f1115;
+    --fg: #e6e6e6;
+    --muted: #9aa0a6;
+    --accent: #7aa2ff;
+    --card: #1a1d24;
+    --border: #2a2e37;
+  }
+}
+body {
+  max-width: 68ch;
+  margin: 0 auto;
+  padding: 0 1rem 4rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+}
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+}
+header nav a:first-child {
+  font-weight: 700;
+}
+h2 {
+  margin-top: 2.5rem;
+}
+.hero {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.hero h1 {
+  margin: 0 0 0.25rem;
+}
+.headline {
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+.actions {
+  display: flex;
+  gap: 0.75rem;
+}
+.button {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.35rem 0.9rem;
+  text-decoration: none;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.card h3 {
+  margin: 0 0 0.5rem;
+}
+.card p {
+  margin: 0.25rem 0;
+}
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+.skills-list li {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.75rem;
+}
+.experience-list {
+  list-style: none;
+  padding: 0;
+}
+.experience-list li + li {
+  margin-top: 1.5rem;
+}
+.experience-list h3 {
+  margin: 0 0 0.15rem;
+}
+.muted {
+  color: var(--muted);
+}
+footer {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+}
+a {
+  color: var(--accent);
+}
+img.avatar {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+}

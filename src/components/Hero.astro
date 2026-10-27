@@ -1,0 +1,23 @@
+---
+import { profile } from '../data/profile';
+---
+
+<section class="hero">
+  <img
+    class="avatar"
+    src={`https://github.com/${profile.githubUsername}.png`}
+    alt=""
+    width="128"
+    height="128"
+    loading="eager"
+  />
+  <div>
+    <h1>{profile.name}</h1>
+    <p class="headline">{profile.location ? `${profile.headline} · ${profile.location}` : profile.headline}</p>
+    {profile.summary && <p>{profile.summary}</p>}
+    <p class="actions">
+      <a class="button" href={`https://github.com/${profile.githubUsername}`}>GitHub</a>
+      {profile.linkedinUrl && <a class="button" href={profile.linkedinUrl}>LinkedIn</a>}
+    </p>
+  </div>
+</section>

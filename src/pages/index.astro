@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import { profile } from '../data/profile';
+import { getTopRepos } from '../lib/github';
+
+const repos = await getTopRepos(profile.githubUsername);
+---
+
+<Base title={`${profile.name} — ${profile.headline}`}>
+  <Hero />
+  <Experience />
+  <Projects repos={repos} />
+  <Skills />
+</Base>

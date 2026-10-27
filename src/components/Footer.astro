@@ -1,0 +1,18 @@
+---
+import { profile } from '../data/profile';
+
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <p>
+    © {year} {profile.name} ·
+    <a href={`https://github.com/${profile.githubUsername}`}>GitHub</a>
+    {profile.linkedinUrl && (
+      <>
+        {' · '}
+        <a href={profile.linkedinUrl}>LinkedIn</a>
+      </>
+    )}
+  </p>
+</footer>

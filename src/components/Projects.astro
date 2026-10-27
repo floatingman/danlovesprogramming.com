@@ -1,0 +1,27 @@
+---
+import type { Repo } from '../lib/github';
+import { profile } from '../data/profile';
+
+interface Props {
+  repos: Repo[];
+}
+
+const { repos } = Astro.props;
+---
+
+<section id="projects">
+  <h2>Projects</h2>
+  {repos.length > 0 ? (
+    <div class="projects-grid">
+      {repos.map((repo) => (
+        <article class="card">
+          <h3><a href={repo.html_url}>{repo.name}</a></h3>
+          {repo.description && <p>{repo.description}</p>}
+          <p class="muted">{[repo.language, `★ ${repo.stargazers_count}`].filter(Boolean).join(' · ')}</p>
+        </article>
+      ))}
+    </div>
+  ) : (
+    <p><a href={`https://github.com/${profile.githubUsername}`}>See my work on GitHub →</a></p>
+  )}
+</section>

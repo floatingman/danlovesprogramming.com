@@ -1,0 +1,16 @@
+{
+  "name": "danlovesprogramming.com",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.12",
+    "astro": "^5.18.2",
+    "typescript": "^5.9.3"
+  }
+}
