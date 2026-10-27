@@ -27,7 +27,7 @@ export const profile: Profile = {
   headline: 'I make stuff, sometimes with a computer',
   location: 'Nashville, TN',
   summary: '', // empty = auto-hidden; add a 2-3 sentence bio here when ready
-  linkedinUrl: 'https://www.linkedin.com/in/danlovesprogramming', // guessed vanity URL — verify it resolves
+  linkedinUrl: 'https://www.linkedin.com/in/danielnewman/',
   githubUsername: 'floatingman',
   skills: [
     'Astro',
