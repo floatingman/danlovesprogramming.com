@@ -48,7 +48,7 @@ export const profile: Profile = {
   experience: [
     {
       company: 'SUSE', // full-time, remote — from LinkedIn
-      role: 'Software Engineer', // unverified — LinkedIn entry omits exact title; confirm
+      role: 'Senior Software QA Engineer', // from LinkedIn headline
       start: 'Jan 2022',
       end: null,
       summary: 'Advancing software quality assurance through innovative CI/CD solutions and automation.',
