@@ -28,8 +28,9 @@ export async function getTopRepos(
     );
     if (!res.ok) throw new Error(`GitHub API responded ${res.status}`);
     const repos = (await res.json()) as Repo[];
+    const excluded = new Set(exclude.map((n) => n.toLowerCase()));
     const owned = repos.filter(
-      (r) => !r.fork && !r.archived && !exclude.includes(r.name.toLowerCase()),
+      (r) => !r.fork && !r.archived && !excluded.has(r.name.toLowerCase()),
     );
     if (featured.length > 0) {
       const wanted = new Set(featured.map((n) => n.toLowerCase()));
