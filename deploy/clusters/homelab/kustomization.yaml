@@ -5,4 +5,4 @@ resources:
   - ../../base
 images:
   - name: ghcr.io/floatingman/danlovesprogramming.com
-    newTag: sha-0000000 # rewritten by ci.yml to sha-<full sha>; placeholder until first CI run
+    newTag: sha-8d4fde0130c5b83449763cf1d20642a3372de002
