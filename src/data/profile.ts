@@ -56,7 +56,7 @@ export const profile: Profile = {
       company: 'Big Hearted Labs',
       role: 'Software Engineer', // unverified — confirm role title
       start: '2016', // unverified — confirm start year
-      end: '2025', // unverified — confirm end year
+      end: null, // ongoing alongside SUSE per user ("is my software consultancy")
       summary: 'My software consultancy.',
     },
   ],
