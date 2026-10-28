@@ -27,6 +27,8 @@ jobs:
           context: .
           push: true
           tags: 'ghcr.io/${{ github.repository }}:sha-${{ github.sha }}'
+          secrets: |
+            github_token=${{ secrets.GITHUB_TOKEN }}
       - name: Bump image tag in Git
         run: |
           git config user.name "github-actions[bot]"
