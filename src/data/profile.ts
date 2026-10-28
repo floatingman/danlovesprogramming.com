@@ -16,8 +16,9 @@ export interface Profile {
   githubUsername: string;
   skills: string[];
   experience: ExperienceEntry[];
-  // Repo curation: featuredRepos = pinned picks (order preserved, topped up to 6 by stars);
-  // excludeRepos = hidden from auto-selection. Both empty = default top-6-by-stars.
+  // Repo curation (site-level override): featuredRepos = picks (order preserved, topped up
+  // by stars); excludeRepos = hidden from auto-selection; exclude always wins over featured.
+  // Both empty = mirror GitHub profile pins, falling back to top-6-by-stars if none set.
   featuredRepos: string[];
   excludeRepos: string[];
 }
