@@ -7,17 +7,10 @@ import { profile } from '../data/profile';
   <ol class="experience-list">
     {profile.experience.map((entry) => (
       <li>
-        <h3>{entry.role} · {entry.company}</h3>
-        <p class="muted">{entry.start} – {entry.end ?? 'Present'}</p>
-        {entry.summary && <p>{entry.summary}</p>}
-        {entry.highlights && entry.highlights.length > 0 && (
-          <ul>
-            {entry.highlights.map((h) => (
-              <li>{h}</li>
-            ))}
-          </ul>
-        )}
+        <strong>{entry.role}</strong> · {entry.company}
+        <span class="muted"> · {entry.start} – {entry.end ?? 'Present'}</span>
       </li>
     ))}
   </ol>
+  <p class="muted">Full details on <a href={profile.linkedinUrl}>LinkedIn</a>.</p>
 </section>
